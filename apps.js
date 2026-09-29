@@ -1,18 +1,32 @@
 // 웹앱 목록 데이터 — 웹앱을 추가/수정할 때는 이 파일만 고치면 됩니다.
 // screenshot: screenshots/ 폴더에 넣은 이미지 경로 (없으면 자리표시 화면이 보입니다)
+// ※ summary·features는 스크린샷을 보고 추정해 작성한 초안입니다.
 window.APPS = [
   {
-    name: "sgdo",
-    url: "https://sgdo.netlify.app",
-    screenshot: "screenshots/sgdo.png",
-    summary: "소개 문구 작성 필요 (사이트 확인 후 1~2줄로 입력)",
-    features: ["기능 설명 작성 필요", "기능 설명 작성 필요", "기능 설명 작성 필요"],
+    name: "공문 작성기",
+    url: "https://0moon.netlify.app/gongmun",
+    screenshot: "screenshots/0moon.png",
+    summary: "관련 공문과 개요만 입력하면 AI가 공문 제목과 본문을 작성해 주는 도구예요.",
+    features: [
+      "이전에 저장한 관련 공문(교육과정, 계획 등)을 골라 참고 자료로 활용",
+      "문서 개요를 간단히 적으면 AI가 공문 제목과 본문을 자동 생성",
+      "제목·본문을 각각 복사할 수 있고, 제목 앞 표시 형식 선택 가능",
+      "최근 작성한 공문 목록에서 다시 열어보기·고정·삭제",
+      "공문·품의·관리자 탭으로 업무별 구분, Gemini 등 AI 선택 및 API 키 변경",
+    ],
   },
   {
-    name: "0moon",
-    url: "https://0moon.netlify.app",
-    screenshot: "screenshots/0moon.png",
-    summary: "소개 문구 작성 필요 (사이트 확인 후 1~2줄로 입력)",
-    features: ["기능 설명 작성 필요", "기능 설명 작성 필요", "기능 설명 작성 필요"],
+    name: "생기부 도우미",
+    url: "https://sgdo.netlify.app",
+    screenshot: "screenshots/sgdo.png",
+    summary: "학생 특성 기록과 교과 평가결과를 AI가 종합의견 문장으로 정리해 주는 도구예요.",
+    features: [
+      "명부 파일(이미지·CSV·스캔 PDF·HWPX)을 올리면 AI가 번호·이름을 읽어 한 번에 등록",
+      "학생 명부, 특성 기록·종합의견, 평가계획·평가결과 탭으로 작업 구분",
+      "학년(학급)별 관리와 데이터 백업, Claude 등 AI 선택",
+      "별명·코드로 등록해 학생 실명 노출을 줄이는 안내 제공",
+      "관리자도 학생 정보를 볼 수 없는 보안 구조와 API 키 암호화 보관 안내",
+      "작업 상태를 저장하고 이전 시점으로 되돌리는 '되돌리기 기록'",
+    ],
   },
 ];
