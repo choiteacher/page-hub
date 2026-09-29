@@ -25,9 +25,9 @@ body {
 
 /* 글씨 크기: 사이트 제목 > 항목 제목 > 상세 내용 */
 .top { padding: 56px 20px 28px; text-align: center; }
-.top h1 { margin: 0; font-family: var(--font-title); font-size: 4.2rem; line-height: 1.1; color: var(--sun-deep); }
+.top h1 { margin: 0; font-weight: 400; font-family: var(--font-title); font-size: 4.2rem; line-height: 1.1; color: var(--sun-deep); }
 .top h1, .card h2 { letter-spacing: 0; word-spacing: 0; }
-.card h2 { margin: 0; font-family: var(--font-title); font-size: 2.4rem; line-height: 1.2; color: var(--sun-deep); }
+.card h2 { margin: 0; font-weight: 400; font-family: var(--font-title); font-size: 2.4rem; line-height: 1.2; color: var(--sun-deep); }
 .summary, .features, .open { font-size: 1.05rem; }
 
 main { display: flex; flex-direction: column; gap: 28px; max-width: 1000px; margin: 0 auto; padding: 0 20px 64px; }
