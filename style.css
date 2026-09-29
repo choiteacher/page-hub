@@ -7,7 +7,7 @@
   --ink-soft: #7d6552;
   --card: #fffaf3;
   --line: #f0d9bf;
-  --font-title: "Nanum Pen Script", "Gowun Dodum", "Malgun Gothic", cursive, sans-serif;
+  --font-title: "Jua", "Gowun Dodum", "Malgun Gothic", cursive, sans-serif;
   --font-body: "Gowun Dodum", "Malgun Gothic", "Noto Sans KR", system-ui, sans-serif;
 }
 * { box-sizing: border-box; }
@@ -25,9 +25,9 @@ body {
 
 /* 글씨 크기: 사이트 제목 > 항목 제목 > 상세 내용 */
 .top { padding: 56px 20px 28px; text-align: center; }
-.top h1 { margin: 0; font-family: var(--font-title); font-size: 5.6rem; line-height: 1.1; color: var(--sun-deep); }
+.top h1 { margin: 0; font-family: var(--font-title); font-size: 4.2rem; line-height: 1.1; color: var(--sun-deep); }
 .top h1, .card h2 { letter-spacing: 0; word-spacing: 0; }
-.card h2 { margin: 0; font-family: var(--font-title); font-size: 3.2rem; line-height: 1.2; color: var(--sun-deep); }
+.card h2 { margin: 0; font-family: var(--font-title); font-size: 2.4rem; line-height: 1.2; color: var(--sun-deep); }
 .summary, .features, .open { font-size: 1.05rem; }
 
 main { display: flex; flex-direction: column; gap: 28px; max-width: 1000px; margin: 0 auto; padding: 0 20px 64px; }
@@ -57,8 +57,8 @@ main { display: flex; flex-direction: column; gap: 28px; max-width: 1000px; marg
 .open:hover { background: var(--sun-deep); }
 
 @media (max-width: 760px) {
-  .top h1 { font-size: 4rem; }
-  .card h2 { font-size: 2.6rem; }
+  .top h1 { font-size: 3rem; }
+  .card h2 { font-size: 2rem; }
   .body { grid-template-columns: 1fr; }
   .card:nth-child(even) .shot { order: 0; }
 }
