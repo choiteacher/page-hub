@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>웹앱 모음</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="sun" aria-hidden="true"></div>
+  <header class="top">
+    <h1>웹앱 모음</h1>
+    <div class="toggle" role="group" aria-label="보기 방식">
+      <button type="button" data-view="grid" aria-pressed="true">썸네일</button>
+      <button type="button" data-view="list" aria-pressed="false">목록</button>
+    </div>
+  </header>
+  <main id="apps" class="grid"></main>
+  <script src="apps.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

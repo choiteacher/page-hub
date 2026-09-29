@@ -1,0 +1,75 @@
+:root {
+  --bg: #fdf3e7;
+  --bg-2: #f8dfc4;
+  --sun: #eba071;       /* 은은한 오렌지 */
+  --sun-deep: #c9754a;
+  --ink: #4a3426;
+  --ink-soft: #7d6552;
+  --card: #fffaf3;
+  --line: #f0d9bf;
+  --header-h: 72px;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; min-height: 100vh; color: var(--ink);
+  font-family: "Pretendard", "Noto Sans KR", "Malgun Gothic", system-ui, sans-serif;
+  background: linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 100%) fixed;
+}
+/* 떠오르는 태양: 화면 아래에서 은은하게 올라오는 원형 빛 */
+.sun {
+  position: fixed; left: 50%; bottom: -34vmin; width: 90vmin; height: 90vmin; z-index: -1;
+  transform: translateX(-50%); border-radius: 50%;
+  background: radial-gradient(circle, rgba(235,160,113,.55) 0%, rgba(235,160,113,.28) 45%, rgba(235,160,113,0) 70%);
+}
+.top {
+  height: var(--header-h); padding: 0 28px; display: flex; align-items: center; justify-content: space-between;
+}
+.top h1 { margin: 0; font-size: 1.4rem; color: var(--sun-deep); letter-spacing: .02em; }
+.toggle { display: inline-flex; border: 1px solid var(--line); border-radius: 999px; background: var(--card); overflow: hidden; }
+.toggle button {
+  border: 0; background: none; padding: 8px 18px; font: inherit; font-size: .9rem; color: var(--ink-soft); cursor: pointer;
+}
+.toggle button[aria-pressed="true"] { background: var(--sun); color: #fff; }
+
+main { padding: 0 28px 32px; }
+.card {
+  display: flex; flex-direction: column; gap: 12px; padding: 20px; color: inherit; text-decoration: none;
+  background: var(--card); border: 1px solid var(--line); border-radius: 18px;
+  box-shadow: 0 4px 18px rgba(201,117,74,.10); transition: transform .15s, box-shadow .15s;
+}
+.card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(201,117,74,.18); }
+.card h2 { margin: 0; font-size: 1.6rem; color: var(--sun-deep); }
+.shot {
+  position: relative; flex: 1; min-height: 160px; overflow: hidden; border-radius: 12px;
+  border: 1px solid var(--line); background: #f6e6d3; display: grid; place-items: center;
+}
+.shot img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: top; }
+.ph { color: var(--ink-soft); font-size: .9rem; }
+.summary { margin: 0; color: var(--ink-soft); line-height: 1.5; }
+.features { display: none; margin: 0; padding-left: 1.2em; line-height: 1.7; }
+.open { color: var(--sun-deep); font-weight: 600; font-size: .95rem; }
+
+/* 썸네일 보기: 화면을 1/n로 분할 */
+main.grid {
+  display: grid; gap: 20px;
+  grid-template-columns: repeat(var(--cols, 1), 1fr);
+  grid-auto-rows: minmax(340px, calc((100vh - var(--header-h) - 32px - (var(--rows, 1) - 1) * 20px) / var(--rows, 1)));
+}
+.grid .summary { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.grid .open { display: none; }
+
+/* 목록 보기: 스크린샷 + 이름 + 상세 기능 */
+main.list { display: flex; flex-direction: column; gap: 20px; max-width: 1000px; margin: 0 auto; }
+.list .card { display: grid; grid-template-columns: 380px 1fr; grid-template-areas: "shot name" "shot sum" "shot feat" "shot open"; column-gap: 24px; align-content: start; }
+.list .card h2 { grid-area: name; font-size: 2rem; }
+.list .shot { grid-area: shot; min-height: 240px; }
+.list .summary { grid-area: sum; }
+.list .features { grid-area: feat; display: block; }
+.list .open { grid-area: open; align-self: end; }
+
+@media (max-width: 720px) {
+  .top, main { padding-left: 16px; padding-right: 16px; }
+  main.grid { grid-template-columns: 1fr; grid-auto-rows: auto; }
+  .shot { min-height: 200px; flex: none; }
+  .list .card { display: flex; }
+}
